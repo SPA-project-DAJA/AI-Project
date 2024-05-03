@@ -1,1 +1,72 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+// Dodatkowe style dla strony
+
+// Styl dla wyszukiwarki
+.input-container {
+  margin-bottom: 20px;
+}
+
+// Styl dla przycisku wyszukiwania
+.search-button {
+  margin-left: 10px;
+}
+
+// Styl dla ładowania danych
+.loader {
+  margin-top: 20px;
+}
+
+// Styl dla wyników
+.result {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnail img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+// Styl dla modala
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal img {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

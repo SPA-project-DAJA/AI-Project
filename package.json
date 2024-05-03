@@ -10,10 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "bulma": "^1.0.0",
     "js-tokens": "^9.0.0",
     "nuxt": "^3.10.3",
     "vue": "^3.4.19",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "sass": "^1.71.1"

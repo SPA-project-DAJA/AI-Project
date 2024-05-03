@@ -23,7 +23,9 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="#">Home</a>
+        <a class="navbar-item" href="#"
+          ><router-link to="/">Home</router-link></a
+        >
         <a class="navbar-item" href="#">About</a>
         <a class="navbar-item" href="#">Services</a>
         <a class="navbar-item" href="#">Contact</a>
@@ -50,5 +52,19 @@ export default {
 </script>
 
 <style scoped>
-/* Dodaj tutaj niestandardowe style */
+.navbar {
+  background-color: #4a4a4a;
+}
+
+.navbar-item {
+  color: white;
+}
+
+.navbar-burger {
+  color: white;
+}
+
+.navbar-burger span {
+  background-color: white;
+}
 </style>
