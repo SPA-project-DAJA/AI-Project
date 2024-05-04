@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>Powered by Daniel Joskowski</p>
+      <p>Powered by Daniel Joskowski, Alan Grala, Krzysztof Jagielski</p>
     </div>
   </footer>
 </template>
