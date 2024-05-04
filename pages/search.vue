@@ -1,13 +1,14 @@
 <template>
   <div class="container">
     <div class="field has-addons">
-      <div class="control is-expanded">
+      <div class="control is-expanded" :class="{ 'is-expanded': isExpanded }">
         <input
           class="input"
           type="text"
           v-model="searchQuery"
           placeholder="Wyszukaj..."
           @keydown.enter="searchData"
+          ref="searchInput"
         />
       </div>
       <div class="control">
@@ -59,12 +60,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const searchQuery = ref("");
 const photos = ref([]);
 const loader = ref(false);
 const selectedImage = ref("");
+const isExpanded = ref(false); // Dodaj zmienną isExpanded
 
 const API_KEY = "s4lVXRGh8RuRzi7fWhTYeNQHyZfuqSIV2LpZNlEkecIBVFcMXbW03gKE";
 const BASE_URL = "https://api.pexels.com/v1";
@@ -107,6 +109,14 @@ const closeFullImage = () => {
 const clearResults = () => {
   photos.value = [];
 };
+
+// Obserwuj zmiany w polu wyszukiwania, aby zmienić szerokość
+watch(searchQuery, () => {
+  const input = document.getElementById("search-input");
+  if (input) {
+    isExpanded.value = input.scrollWidth > input.clientWidth;
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -115,15 +125,18 @@ const clearResults = () => {
 .container {
   margin: 20px auto;
   max-width: 1200px;
+  min-height: 85vh; /* minimalna wysokość ekranu */
 }
 
 /* Styl do powiększania wyszukiwarki */
 .input {
   transition: width 0.3s ease; /* Dodaj płynną animację */
   width: 100%; /* Szerokość początkowa */
-  &:focus {
-    width: calc(100% + 200px); /* Powiększ o dodatkową ilość pikseli */
-  }
+}
+
+/* Dodaj klase is-expanded gdy pole wyszukiwania jest rozszerzone */
+.is-expanded {
+  width: calc(100% + 200px); /* Powiększ o dodatkową ilość pikseli */
 }
 
 .loader {

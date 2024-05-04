@@ -26,9 +26,6 @@
         <a class="navbar-item" href="#"
           ><router-link to="/">Home</router-link></a
         >
-        <a class="navbar-item" href="#">About</a>
-        <a class="navbar-item" href="#">Services</a>
-        <a class="navbar-item" href="#">Contact</a>
       </div>
 
       <div class="navbar-end">
